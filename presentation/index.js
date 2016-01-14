@@ -30,6 +30,8 @@ import preloader from "spectacle/lib/utils/preloader";
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
+import ToggleSwitch from "../assets/toggleswitch.js";
+
 // Require CSS
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
@@ -190,6 +192,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide>
+            <Heading size={2}>Why JSX?</Heading>
             <List>
               <Appear><ListItem>Not limited like a templating language</ListItem></Appear>
               <Appear><ListItem>React components, including JSX are plain JavaScript</ListItem></Appear>
@@ -202,20 +205,89 @@ export default class Presentation extends React.Component {
 
           <Slide transition={["slide"]}>
             <Heading size={1} fit caps textColor="rgba(0, 0, 0, 0.5)">Part V</Heading>
-            <Heading size={1} fit caps>Virtual DOM</Heading>
+            <Heading size={1} fit caps>State</Heading>
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <Heading size={1} fit caps>One-way data flow</Heading>
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("raw!../assets/examples/state_component.jsx")} textSize="medium" />
+          </Slide>
+
+          <Slide bgColor="primary">
+            <ToggleSwitch/>
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <Heading size={1} fit caps>One-way data flow</Heading>
+          </Slide>
+
+          <Slide>
+            <Markdown># Re-render *everything* on *every* update</Markdown>
           </Slide>
 
           <Slide transition={["slide"]}>
             <Heading size={1} fit caps textColor="rgba(0, 0, 0, 0.5)">Part VI</Heading>
-            <Heading size={1} fit caps>Lifecycle</Heading>
+            <Heading size={1} fit caps>Virtual DOM</Heading>
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <Heading size={1} fit caps>Manipulating the DOM slow.</Heading>
+          </Slide>
+
+          <Slide bgColor="secondary">
+            <Heading size={1} fit caps>Manipulating JS Objects is _fast.</Heading>
+          </Slide>
+
+          <Slide bgColor="secondary" note="Because the DOM is not being manipulated directly, you can render server-side.">
+            <Heading size={1} fit caps textColor="primary">Server Side Rendering</Heading>
           </Slide>
 
           <Slide transition={["slide"]}>
             <Heading size={1} fit caps textColor="rgba(0, 0, 0, 0.5)">Part VII</Heading>
-            <Heading size={1} fit caps>Next Steps</Heading>
+            <Heading size={1} fit caps>Lifecycle</Heading>
+          </Slide>
+
+          <Slide note="Invoked once immediately before the initial rendering.">
+            <Heading size={1} fit><Code>componentWillMount</Code></Heading>
+          </Slide>
+
+          <Slide note="Invoked once immediately after the initial rendering.">
+            <Heading size={1} fit><Code>componentDidMount</Code></Heading>
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("raw!../assets/examples/ajax_component_a.jsx")} textSize="medium" />
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("raw!../assets/examples/ajax_component_b.jsx")} textSize="medium" />
+          </Slide>
+
+          <Slide note="">
+            <Heading size={1} fit><Code>componentWillReceiveProps</Code></Heading>
+          </Slide>
+
+          <Slide note="optionally return false">
+            <Heading size={1} fit><Code>shouldComponentUpdate</Code></Heading>
+          </Slide>
+
+          <Slide note="">
+            <Heading size={1} fit><Code>componentWillUpdate</Code></Heading>
+          </Slide>
+
+          <Slide note="">
+            <Heading size={1} fit><Code>componentDidUpdate</Code></Heading>
+          </Slide>
+
+          <Slide note="">
+            <Heading size={1} fit><Code>componentWillUnmount</Code></Heading>
           </Slide>
 
           <Slide transition={["slide"]}>
+            <Heading size={1} fit caps textColor="rgba(0, 0, 0, 0.5)">Part VIII</Heading>
             <Heading size={1} fit caps>Q&A</Heading>
           </Slide>
 

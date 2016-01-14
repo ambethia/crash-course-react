@@ -4,6 +4,6 @@ var ReactDOM = require('react-dom');
 var AwesomeWidget = require('awesomeWidget.js');
 
 ReactDOM.render(
-  document.getElementByID('root'),
-  React.createElement(AwesomeWidget)
+  React.createElement(AwesomeWidget),
+  document.getElementByID('root')
 );
