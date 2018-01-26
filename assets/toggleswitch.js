@@ -5,20 +5,22 @@ export default class ToggleSwitch extends React.Component {
   constructor() {
     super();
     this.state = {
-      active: false
+      on: false
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.setState({
-      active: !this.state.active
+      on: !this.state.on
     });
   }
 
   render() {
     const classes = ["toggle-switch"];
-    classes.push(this.state.active ? "on" : "off");
+    if (this.state.on) {
+      classes.append("on");
+    }
 
     return (
       <div>
@@ -36,10 +38,8 @@ export default class ToggleSwitch extends React.Component {
           .toggle-switch.on .switch {\
             left: 100px;\
           }\
-          .toggle-switch.off .switch {\
-            left: 0px;\
-          }\
           .toggle-switch .switch {\
+            left: 0px;\
             position: relative;\
             background-color: white;\
             width: 80px;\

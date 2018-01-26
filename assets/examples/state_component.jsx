@@ -1,19 +1,21 @@
 var ToggleSwitch = React.createClass({
   getInitialState: function () {
     return {
-      active: false
+      on: false
     }
   },
 
   handleClick: function (event) {
     this.setState({
-      active: !this.state.active
+      on: !this.state.on
     })
   },
 
   render: function () {
     var classes = ["toggle-switch"];
-    classes.append(this.state.active ? "on" : "off");
+    if (this.state.on) {
+      classes.append("on");
+    }
 
     return (
       <div className={classes.join(' ')}>

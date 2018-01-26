@@ -39,6 +39,8 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   sdg: require("../assets/sdg.svg"),
   tiy: require("../assets/tiy.svg"),
+  comp0: require("../assets/comp_0.png"),
+  comp1: require("../assets/comp_1.png"),
   ambethia: require("../assets/ambethia.svg")
 };
 
@@ -122,12 +124,25 @@ export default class Presentation extends React.Component {
             <Heading size={1} fit caps>Components</Heading>
           </Slide>
 
+          <Slide>
+              <Image src={images.comp0} width="100%" />
+          </Slide>
+
+          <Slide>
+            <Image src={images.comp1} width="100%"/>
+          </Slide>
+
+
           <Slide bgColor="secondary">
             <Heading size={1} fit textColor="tertiary">Convert data (state) into UI (HTML).</Heading>
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/create_component.jsx")} textSize="largest" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/create_component.jsx")} textSize="largest" />
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/create_component.js")} textSize="largest" />
           </Slide>
 
           <Slide>
@@ -146,17 +161,29 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/simple_component.jsx")} textSize="large" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/simple_component.jsx")} textSize="large" />
             <Appear>
-              <CodePane lang="jsx" source={require("raw!../assets/examples/simple_component.html")} textSize="large" />
+              <CodePane lang="jsx" source={require("!raw!../assets/examples/simple_component.html")} textSize="large" />
             </Appear>
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/render_component.html")} textSize="large" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/simple_component.js")} textSize="large" />
             <Appear>
-              <CodePane lang="jsx" source={require("raw!../assets/examples/render_component.jsx")} textSize="large" />
+              <CodePane lang="jsx" source={require("!raw!../assets/examples/simple_component.html")} textSize="large" />
             </Appear>
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/render_component.html")} textSize="large" />
+            <Appear>
+              <CodePane lang="jsx" source={require("!raw!../assets/examples/render_component.jsx")} textSize="large" />
+            </Appear>
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/render_component.html")} textSize="large" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/render_component.js")} textSize="large" />
           </Slide>
 
           <Slide note="like parameters to a function, can be used to pass callbacks into a child component">
@@ -176,10 +203,15 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/props_component.jsx")} textSize="large" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/props_component.jsx")} textSize="large" />
             <Appear>
-              <CodePane lang="jsx" source={require("raw!../assets/examples/simple_component.html")} textSize="large" />
+              <CodePane lang="jsx" source={require("!raw!../assets/examples/simple_component.html")} textSize="large" />
             </Appear>
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/props_component.js")} textSize="large" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/simple_component.html")} textSize="large" />
           </Slide>
 
           <Slide transition={["slide"]}>
@@ -188,7 +220,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/jsx_component.jsx")} textSize="large" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/jsx_component.jsx")} textSize="large" />
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/jsx_component.js")} textSize="large" />
           </Slide>
 
           <Slide>
@@ -213,7 +249,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/state_component.jsx")} textSize="medium" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/state_component.jsx")} textSize="medium" />
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/state_component.js")} textSize="medium" />
           </Slide>
 
           <Slide bgColor="primary">
@@ -259,31 +299,29 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/ajax_component_a.jsx")} textSize="medium" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/ajax_component_a.jsx")} textSize="medium" />
           </Slide>
 
           <Slide bgColor="#2D2D2D">
-            <CodePane lang="jsx" source={require("raw!../assets/examples/ajax_component_b.jsx")} textSize="medium" />
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/ajax_component_a.js")} textSize="medium" />
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/ajax_component_b.jsx")} textSize="medium" />
+          </Slide>
+
+          <Slide bgColor="#2D2D2D">
+            <CodePane lang="jsx" source={require("!raw!../assets/examples/ajax_component_b.js")} textSize="medium" />
           </Slide>
 
           <Slide note="">
-            <Heading size={1} fit><Code>componentWillReceiveProps</Code></Heading>
-          </Slide>
-
-          <Slide note="optionally return false">
-            <Heading size={1} fit><Code>shouldComponentUpdate</Code></Heading>
-          </Slide>
-
-          <Slide note="">
-            <Heading size={1} fit><Code>componentWillUpdate</Code></Heading>
-          </Slide>
-
-          <Slide note="">
-            <Heading size={1} fit><Code>componentDidUpdate</Code></Heading>
-          </Slide>
-
-          <Slide note="">
-            <Heading size={1} fit><Code>componentWillUnmount</Code></Heading>
+            <List>
+              <Appear><ListItem>componentWillReceiveProps</ListItem></Appear>
+              <Appear><ListItem>shouldComponentUpdate</ListItem></Appear>
+              <Appear><ListItem>componentWillUpdate</ListItem></Appear>
+              <Appear><ListItem>componentDidUpdate</ListItem></Appear>
+              <Appear><ListItem>componentWillUnmount</ListItem></Appear>
+            </List>
           </Slide>
 
           <Slide transition={["slide"]}>
@@ -305,7 +343,6 @@ export default class Presentation extends React.Component {
               suncoast.io
             </Heading>
           </Slide>
-
         </Deck>
       </Spectacle>
     );
